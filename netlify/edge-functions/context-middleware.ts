@@ -51,6 +51,10 @@ export default async (request: Request, netlifyContext: Context) => {
 async function getCDPData(netlifyContext: Context) {
   
   // const CUSTOMER_INSIGHTS_ENDPOINT = process.env.CUSTOMER_INSIGHTS_ENDPOINT;
+
+
+
+// @ts-ignore: deno imports failing next build
 const ACCESS_TOKEN = Deno.env.get("MCI_ACCESS_TOKEN");
   // const CUSTOMER_INSIGHTS_INSTANCE = process.env.CUSTOMER_INSIGHTS_INSTANCE; //42d1b1fa-046f-487a-ad62-b9d99b09ecba
 
