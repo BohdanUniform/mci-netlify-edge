@@ -82,7 +82,9 @@ const ACCESS_TOKEN = Deno.env.get("MCI_ACCESS_TOKEN");
   
   console.log(visitorData);
   
-  const traits = removeUnderscores(visitorData?.traits);
+  const traits = removeUnderscores(visitorData[0]);
+  console.log("removed underscores data");
+  
   console.log({ traits });
 
   return traits;
