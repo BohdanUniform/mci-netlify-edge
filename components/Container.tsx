@@ -29,7 +29,7 @@ const Container: React.FC<ContainerProps> = ({ title }: ContainerProps) => (
 );
 
 registerUniformComponent({
-  type: 'Container',
+  type: 'container',
   component: Container
 });
 
