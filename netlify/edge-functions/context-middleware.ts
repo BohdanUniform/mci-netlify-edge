@@ -23,7 +23,6 @@ export default async (request: Request, netlifyContext: Context) => {
     ...buildNetlifyQuirks(netlifyContext),
     ...(await getCDPData(netlifyContext)),
   };
-  console.log("quirks are gonna set here");
 
   console.log({ quirks });
   const { processed, response } = await handler({
