@@ -49,18 +49,15 @@ export default async (request: Request, netlifyContext: Context) => {
  
 async function getCDPData(netlifyContext: Context) {
   
-  // const CUSTOMER_INSIGHTS_ENDPOINT = process.env.CUSTOMER_INSIGHTS_ENDPOINT;
 
-
+//run auth process and retrieve access token.
 
 // @ts-ignore: deno imports failing next build
 const ACCESS_TOKEN = Deno.env.get("MCI_ACCESS_TOKEN");
-  // const CUSTOMER_INSIGHTS_INSTANCE = process.env.CUSTOMER_INSIGHTS_INSTANCE; //42d1b1fa-046f-487a-ad62-b9d99b09ecba
-
-  //const {  customerId }= "85d0a2193825204e3cabe79f0ec4bb95"; 
 
 
-  const url = "https://api.ci.ai.dynamics.com/v1/instances/42d1b1fa-046f-487a-ad62-b9d99b09ecba/data/Customer?$filter=CustomerId eq '3c65adba444e75db32a78180cdb295ba'";
+//Microsoft Customer Insights endpoint, provide it with your own instanceID, access token and customerID
+const url = "https://api.ci.ai.dynamics.com/v1/instances/{youInstanceID}/data/Customer?$filter=CustomerId eq '{customerID}'";
 
   const visitorResponse = await fetch(url, {
     headers: {
